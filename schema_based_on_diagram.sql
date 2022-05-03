@@ -24,3 +24,11 @@ CREATE TABLE invoices (
 	payed_at timestamp,
 	medical_history_id int REFERENCES medical_histories(id)
 );
+
+/* Create treatments table */
+
+CREATE TABLE treatments (
+	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	type varchar(250),
+	name varchar(250),
+);
