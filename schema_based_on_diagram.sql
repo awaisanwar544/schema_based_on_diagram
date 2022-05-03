@@ -43,3 +43,10 @@ CREATE TABLE invoice_items (
 	invoice_id int REFERENCES invoices(id),
 	treatment_id int REFERENCES treatments(id)
 );
+
+/* Create medical_histories_treatments table */
+
+CREATE TABLE medical_histories_treatments (
+	medical_history_id int REFERENCES medical_histories(id),
+  treatment_id int REFERENCES treatments(id) 
+);
