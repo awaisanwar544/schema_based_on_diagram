@@ -30,5 +30,16 @@ CREATE TABLE invoices (
 CREATE TABLE treatments (
 	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 	type varchar(250),
-	name varchar(250),
+	name varchar(250)
+);
+
+/* Create invoice_items table */
+
+CREATE TABLE invoice_items (
+	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	unit_price decimal,
+	quatntity int,
+	total_price decimal,
+	invoice_id int REFERENCES invoices(id),
+	treatment_id int REFERENCES treatments(id)
 );
